@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5qfjcqwsj6vg"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_vnyfr"]
+[ext_resource type="Script" path="res://bg.gd" id="2_6mu1y"]
+[ext_resource type="Texture2D" uid="uid://beeay2yw4s7qt" path="res://Sunny-land-files/Sunny-land-assets-files/code/sunny-land/assets/environment/back.png" id="2_chob6"]
+[ext_resource type="Texture2D" uid="uid://bk5vnh0yhug4i" path="res://Sunny-land-files/Sunny-land-assets-files/code/sunny-land/assets/environment/middle.png" id="3_8rp1b"]
+[ext_resource type="Texture2D" uid="uid://cqipdpcos2mvo" path="res://Sunny Land houses/Sunny Land Trees Props Pack/Props PNG/plant-house.png" id="4_gkd0n"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vnyfr")
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("2_6mu1y")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(580, 316)
+scale = Vector2(3.02083, 2.63333)
+texture = ExtResource("2_chob6")
+
+[node name="House" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Plant-house" type="Sprite2D" parent="BG/House"]
+position = Vector2(48, 320)
+texture = ExtResource("4_gkd0n")
+
+[node name="Plant-house2" type="Sprite2D" parent="BG/House"]
+position = Vector2(296, 336)
+texture = ExtResource("4_gkd0n")
+
+[node name="Plant-house3" type="Sprite2D" parent="BG/House"]
+position = Vector2(536, 312)
+texture = ExtResource("4_gkd0n")
+
+[node name="Plant-house4" type="Sprite2D" parent="BG/House"]
+position = Vector2(744, 352)
+texture = ExtResource("4_gkd0n")
+
+[node name="Plant-house5" type="Sprite2D" parent="BG/House"]
+position = Vector2(968, 285)
+texture = ExtResource("4_gkd0n")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1232, 0)
+
+[node name="Middle" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(87, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle2" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(263, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle3" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(439, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle4" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(615, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle5" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(791, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle6" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(967, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Middle7" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(1143, 464)
+texture = ExtResource("3_8rp1b")
+metadata/_edit_lock_ = true
+
+[node name="Play" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 136.0
+offset_right = 705.0
+offset_bottom = 312.0
+tooltip_text = "This is the play button "
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 416.0
+offset_right = 705.0
+offset_bottom = 592.0
+tooltip_text = "This is the quit button "
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
